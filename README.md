@@ -1,8 +1,9 @@
-🗳️ Kerala Political Analyzer (KPA)
-A modular political data analytics tool focused on the Kerala political landscape. It scrapes regional news, extracts political sentiment, visualizes trends, and supports natural language query processing.
+# Kerala Political Analyzer (KPA)
+## A modular political data analytics tool focused on the Kerala political landscape. It scrapes regional news, extracts political sentiment, visualizes trends, and supports natural language query processing.
 
 
-📁 Project Structure
+## Project Structure
+```bash
 ├── __pycache__/            # Python cache files
 ├── logs/                   # Logging information
 ├── src/                    # Source code directory
@@ -29,7 +30,7 @@ A modular political data analytics tool focused on the Kerala political landscap
 │   ├── visualizer.py           # Chart generation using Matplotlib and Seaborn
 ├── main.py                 # Entry point to launch the KPA app
 ├── test.py                 # Unit and functional tests
-
+```
 
 🚀 Features
 
@@ -48,7 +49,7 @@ Python 3.8+
 pip
 
 Setup
-```
+```bash
 git clone https://github.com/yourusername/kerala-political-analyzer.git
 cd kerala-political-analyzer
 pip install -r requirements.txt

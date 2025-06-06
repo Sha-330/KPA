@@ -1,0 +1,119 @@
+2025-06-01 09:00:00,123 - root - INFO - Kerala Political Analyzer v1.0.0 - Configuration loaded
+2025-06-01 09:00:00,125 - root - INFO - Environment: development
+2025-06-01 09:00:00,126 - root - INFO - Base directory: /home/user/kerala_analyzer_mini
+2025-06-01 09:00:00,127 - root - INFO - Enabled features: ['enable_caching', 'enable_visualization', 'enable_batch_processing']
+2025-06-01 09:00:01,234 - main - INFO - Kerala Political Analyzer initialized
+2025-06-01 09:00:01,235 - main - INFO - Starting Kerala Political Analyzer in interactive mode
+2025-06-01 09:00:01,300 - src.data_handler - INFO - DataHandler initialized with cache enabled
+2025-06-01 09:00:01,301 - src.analyzer - INFO - PoliticalAnalyzer initialized with NLP enabled
+2025-06-01 09:00:01,302 - src.query_processor - INFO - QueryProcessor initialized
+2025-06-01 09:00:01,303 - src.visualizer - INFO - PoliticalVisualizer initialized
+
+2025-06-01 09:05:15,456 - src.query_processor - INFO - Processing query: What is the sentiment towards CPM?
+2025-06-01 09:05:15,457 - src.query_processor - DEBUG - Intent classified as: sentiment
+2025-06-01 09:05:15,458 - src.query_processor - DEBUG - Entities extracted: {'parties': ['CPM'], 'districts': []}
+2025-06-01 09:05:15,500 - src.data_handler - INFO - Loading cached data for sentiment analysis
+2025-06-01 09:05:15,501 - src.data_handler - DEBUG - Cache hit for key: sentiment_cpm_20250601
+2025-06-01 09:05:15,650 - src.analyzer - INFO - Analyzing sentiment for CPM across 245 articles
+2025-06-01 09:05:15,851 - src.analyzer - DEBUG - Sentiment distribution: Positive: 58.4%, Neutral: 31.2%, Negative: 10.4%
+2025-06-01 09:05:15,852 - src.query_processor - INFO - Query processed successfully in 0.396 seconds
+
+2025-06-01 09:10:22,123 - src.data_handler - INFO - Starting news scraping from manorama
+2025-06-01 09:10:22,124 - src.data_handler - DEBUG - Using headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+2025-06-01 09:10:22,500 - src.data_handler - DEBUG - Scraped article: CPM announces new welfare schemes
+2025-06-01 09:10:23,600 - src.data_handler - DEBUG - Scraped article: UDF criticizes government policies
+2025-06-01 09:10:24,700 - src.data_handler - DEBUG - Scraped article: BJP demands investigation into corruption
+2025-06-01 09:10:25,800 - src.data_handler - INFO - Successfully scraped 47 articles from manorama
+2025-06-01 09:10:25,801 - src.data_handler - INFO - Processing scraped articles for analysis
+
+2025-06-01 09:10:26,000 - src.analyzer - INFO - Starting sentiment analysis on 47 articles
+2025-06-01 09:10:26,100 - src.analyzer - DEBUG - Article 1: Sentiment=0.65 (positive), Confidence=0.82
+2025-06-01 09:10:26,150 - src.analyzer - DEBUG - Article 2: Sentiment=-0.42 (negative), Confidence=0.76
+2025-06-01 09:10:26,200 - src.analyzer - DEBUG - Article 3: Sentiment=-0.31 (negative), Confidence=0.71
+2025-06-01 09:10:27,500 - src.analyzer - INFO - Sentiment analysis completed for 47 articles
+2025-06-01 09:10:27,501 - src.analyzer - INFO - Entity extraction starting...
+2025-06-01 09:10:28,200 - src.analyzer - DEBUG - Found entities: CPM (23 mentions), UDF (18 mentions), BJP (12 mentions)
+2025-06-01 09:10:28,201 - src.analyzer - DEBUG - Districts mentioned: Thiruvananthapuram (15), Kochi (12), Kozhikode (8)
+2025-06-01 09:10:28,202 - src.analyzer - INFO - Entity extraction completed
+
+2025-06-01 09:12:45,333 - src.visualizer - INFO - Creating sentiment visualization chart
+2025-06-01 09:12:45,334 - src.visualizer - DEBUG - Chart type: sentiment_bar, Data points: 3 parties
+2025-06-01 09:12:45,800 - src.visualizer - DEBUG - Chart saved: outputs/charts/sentiment_analysis_20250601_091245.png
+2025-06-01 09:12:45,801 - src.visualizer - INFO - Visualization completed successfully
+
+2025-06-01 09:15:30,456 - src.query_processor - INFO - Processing query: Compare LDF and UDF performance
+2025-06-01 09:15:30,457 - src.query_processor - DEBUG - Intent classified as: comparison
+2025-06-01 09:15:30,458 - src.query_processor - DEBUG - Entities extracted: {'parties': ['LDF', 'UDF'], 'districts': []}
+2025-06-01 09:15:30,500 - src.analyzer - INFO - Starting party comparison analysis
+2025-06-01 09:15:30,750 - src.analyzer - DEBUG - LDF mentions: 156, Average sentiment: 0.34
+2025-06-01 09:15:30,751 - src.analyzer - DEBUG - UDF mentions: 128, Average sentiment: -0.12
+2025-06-01 09:15:30,752 - src.analyzer - INFO - Comparison analysis completed
+2025-06-01 09:15:30,753 - src.query_processor - INFO - Comparison query processed in 0.297 seconds
+
+2025-06-01 09:20:15,100 - src.data_handler - WARNING - Rate limiting detected from mathrubhumi, sleeping for 2 seconds
+2025-06-01 09:20:17,200 - src.data_handler - INFO - Resuming scraping from mathrubhumi
+2025-06-01 09:20:17,201 - src.data_handler - DEBUG - Successfully bypassed rate limit
+
+2025-06-01 09:25:00,000 - main - INFO - Starting batch analysis mode
+2025-06-01 09:25:00,001 - src.data_handler - INFO - Batch processing starting for sources: ['manorama', 'mathrubhumi']
+2025-06-01 09:25:30,500 - src.data_handler - INFO - Collected 94 articles from manorama
+2025-06-01 09:26:15,750 - src.data_handler - INFO - Collected 87 articles from mathrubhumi
+2025-06-01 09:26:15,751 - main - INFO - Processing 181 total articles for batch analysis
+2025-06-01 09:27:45,200 - src.analyzer - INFO - Generated comprehensive insights from 181 articles
+2025-06-01 09:27:45,201 - main - INFO - Batch analysis results saved to: outputs/reports/batch_analysis_20250601_092745.json
+2025-06-01 09:28:30,100 - src.visualizer - INFO - Created comprehensive dashboard: outputs/charts/dashboard_20250601_092830.html
+
+2025-06-01 09:30:00,123 - src.data_handler - INFO - Cache cleanup started
+2025-06-01 09:30:00,124 - src.data_handler - DEBUG - Removing expired cache entries older than 24 hours
+2025-06-01 09:30:00,200 - src.data_handler - DEBUG - Removed 23 expired cache entries
+2025-06-01 09:30:00,201 - src.data_handler - INFO - Cache cleanup completed, current size: 45.2 MB
+
+2025-06-01 09:35:12,456 - src.query_processor - ERROR - Failed to process query: What is happening in 
+2025-06-01 09:35:12,457 - src.query_processor - DEBUG - Error details: Query too short or malformed
+2025-06-01 09:35:12,458 - src.query_processor - INFO - Returning error response for malformed query
+
+2025-06-01 09:40:30,789 - src.data_handler - ERROR - Network timeout while scraping from asianet
+2025-06-01 09:40:30,790 - src.data_handler - DEBUG - Connection timeout after 30 seconds
+2025-06-01 09:40:30,791 - src.data_handler - INFO - Retrying connection in 5 seconds (attempt 1/3)
+2025-06-01 09:40:35,800 - src.data_handler - INFO - Retry successful, resuming scraping from asianet
+2025-06-01 09:40:45,900 - src.data_handler - INFO - Successfully scraped 32 articles from asianet
+
+2025-06-01 09:45:22,123 - src.query_processor - INFO - Processing query: What are the trending topics in Kerala politics?
+2025-06-01 09:45:22,124 - src.query_processor - DEBUG - Intent classified as: trending
+2025-06-01 09:45:22,125 - src.query_processor - DEBUG - Entities extracted: {'parties': [], 'districts': []}
+2025-06-01 09:45:22,200 - src.analyzer - INFO - Analyzing trending topics from 260 recent articles
+2025-06-01 09:45:23,500 - src.analyzer - DEBUG - Top topics: Infrastructure (45 mentions), Education (38 mentions), Healthcare (34 mentions)
+2025-06-01 09:45:23,501 - src.analyzer - INFO - Trending analysis completed
+2025-06-01 09:45:23,502 - src.query_processor - INFO - Trending query processed in 1.380 seconds
+
+2025-06-01 09:50:15,456 - src.visualizer - INFO - Creating trending topics word cloud
+2025-06-01 09:50:15,457 - src.visualizer - DEBUG - Processing 150 unique terms for word cloud
+2025-06-01 09:50:16,200 - src.visualizer - DEBUG - Word cloud saved: outputs/charts/trending_wordcloud_20250601_095016.png
+2025-06-01 09:50:16,201 - src.visualizer - INFO - Word cloud generation completed
+
+2025-06-01 09:55:00,000 - main - INFO - Scheduled maintenance starting
+2025-06-01 09:55:00,001 - src.data_handler - INFO - Database optimization starting
+2025-06-01 09:55:02,500 - src.data_handler - DEBUG - Rebuilt 3 database indexes
+2025-06-01 09:55:02,501 - src.data_handler - DEBUG - Compressed old log entries
+2025-06-01 09:55:03,000 - src.data_handler - INFO - Database optimization completed
+2025-06-01 09:55:03,001 - main - INFO - Scheduled maintenance completed successfully
+
+2025-06-01 09:58:30,123 - src.query_processor - INFO - Processing query: Generate report for district-wise sentiment
+2025-06-01 09:58:30,124 - src.query_processor - DEBUG - Intent classified as: report_generation
+2025-06-01 09:58:30,125 - src.query_processor - DEBUG - Entities extracted: {'parties': [], 'districts': ['all']}
+2025-06-01 09:58:30,200 - src.analyzer - INFO - Generating district-wise sentiment report for 14 districts
+2025-06-01 09:58:32,800 - src.analyzer - DEBUG - Thiruvananthapuram: Positive sentiment (0.42)
+2025-06-01 09:58:32,801 - src.analyzer - DEBUG - Kollam: Neutral sentiment (0.08)
+2025-06-01 09:58:32,802 - src.analyzer - DEBUG - Pathanamthitta: Positive sentiment (0.31)
+2025-06-01 09:58:33,500 - src.analyzer - INFO - District-wise analysis completed for all 14 districts
+2025-06-01 09:58:33,501 - src.visualizer - INFO - Creating district sentiment heatmap
+2025-06-01 09:58:34,200 - src.visualizer - DEBUG - Heatmap saved: outputs/charts/district_sentiment_heatmap_20250601_095834.png
+2025-06-01 09:58:34,201 - main - INFO - District report generated: outputs/reports/district_sentiment_20250601_095834.pdf
+
+2025-06-01 10:00:00,000 - main - INFO - Session summary: Processed 8 queries, Analyzed 260 articles, Generated 5 visualizations
+2025-06-01 10:00:00,001 - main - INFO - Kerala Political Analyzer session completed successfully
+2025-06-01 10:00:00,002 - root - INFO - Application shutdown initiated
+2025-06-01 10:00:00,100 - src.data_handler - INFO - Saving final cache state
+2025-06-01 10:00:00,200 - src.data_handler - INFO - Cache saved successfully, size: 47.8 MB
+2025-06-01 10:00:00,300 - root - INFO - All modules shut down gracefully
+2025-06-01 10:00:00,301 - root - INFO - Kerala Political Analyzer v1.0.0 - Session ended
